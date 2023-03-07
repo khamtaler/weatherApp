@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>Henlo world</h1>
+		<h1 class="container font-Lato">Henlo world</h1>
 	</div>
 </template>
 

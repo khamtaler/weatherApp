@@ -1,10 +1,9 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./index.html', './src/**/*.{vue}'],
+	content: ['./index.html', './src/**/*.{vue,js}'],
 	theme: {
 		extend: {},
 		fontFamily: {
-			Lato: ['Lato, sans-serif'],
+			Lato: ['PT Sans, sans-serif'],
 		},
 		container: {
 			padding: '1.5rem',
