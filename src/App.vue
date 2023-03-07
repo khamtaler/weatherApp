@@ -1,11 +1,9 @@
 <template>
-	<div>
-		<router />
-	</div>
+	<router-link to="/">Home</router-link>
+	<router-link to="/about">About</router-link>
+	<router-view></router-view>
 </template>
 
-<script setup>
-import router from './router/index.js';
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>
