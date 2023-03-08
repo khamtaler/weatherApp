@@ -1,7 +1,9 @@
 <template>
 	<header class="sticky top-0 shadow-lg">
 		<nav class="container relative flex flex-row items-center justify-between max-w-7xl py-4">
-			<router-link to="/" class="rounded-lg text-2xl py-2 px-2 font-bold">Weatherin</router-link>
+			<router-link to="/" class="flex rounded-lg gap-3 text-2xl py-2 px-2 font-bold"
+				><CloudIcon class="w-8 h-8" />Weatherin</router-link
+			>
 			<PlusIcon class="w-10 h-10 hover:opacity-60 duration-150 cursor-pointer" />
 			<div
 				class="absolute -bottom-9 right-8"
@@ -29,6 +31,7 @@ import { ref } from 'vue';
 import QuestionMarkIcon from './icons/QuestionMarkIcon.vue';
 import PlusIcon from './icons/PlusIcon.vue';
 import BaseTooltip from './BaseTooltip.vue';
+import CloudIcon from './icons/CloudIcon.vue';
 
 let tooltipActive = ref(null);
 const toggleTooltip = () => {

@@ -19,18 +19,21 @@ defineProps({
 </script>
 
 <style scoped>
-.tooltip-enter-from,
+.tooltip-enter-from {
+	opacity: 0%;
+	transform: rotate(-90deg);
+}
 .tooltip-leave-to {
 	opacity: 0%;
-	transform: rotate(270deg);
+	transform: rotate(90deg);
 }
 .tooltip-enter-to,
 .tooltip-leave-from {
 	opacity: 100%;
-	transform: rotate(360deg);
+	transform: rotate(0deg);
 }
 .tooltip-enter-active,
 .tooltip-leave-active {
-	transition: 0.7s ease-in-out;
+	transition: 0.4s ease-in-out;
 }
 </style>

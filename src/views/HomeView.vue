@@ -12,6 +12,7 @@
 				v-if="searchReasults && locationQuery"
 				class="max-h-[150px] max-w-xl w-full overflow-auto overflow-x-hidden pl-4 customScroll"
 			>
+				<p v-if="searchReasults.length === 0" class="text-center">Nie znaleziono podanej frazy</p>
 				<li
 					v-if="searchReasults"
 					v-for="result in searchReasults"
