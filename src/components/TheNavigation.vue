@@ -1,28 +1,41 @@
 <template>
 	<header class="sticky top-0 shadow-lg">
-		<nav class="container flex flex-row items-center justify-between max-w-7xl py-4">
+		<nav class="container relative flex flex-row items-center justify-between max-w-7xl py-4">
 			<router-link to="/" class="border-solid border-2 border-green rounded-lg text-2xl py-2 px-2"
 				>WeatherApp</router-link
 			>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				strokeWidth="{1.5}"
-				stroke="currentColor"
-				class="w-10 h-10 hover:opacity-60 duration-150 cursor-pointer"
+			<PlusIcon class="w-10 h-10 hover:opacity-60 duration-150 cursor-pointer" />
+			<div
+				class="absolute -bottom-9 right-8"
+				@mouseenter="toggleTooltip"
+				@mouseleave="toggleTooltip"
 			>
-				<path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-			</svg>
+				<QuestionMarkIcon class="w-6 h-6" />
+			</div>
+			<BaseTooltip class="instruction" :modalActive="tooltipActive">
+				<h1 class="text-2xl">The instruction</h1>
+				<h3 class="text-xl">Abilities</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi a corporis ipsum quasi,
+					repudiandae sunt fuga dolores aliquam. In, magni voluptates fugiat quos totam explicabo
+					velit. Quas harum non nostrum?
+				</p>
+				<h3 class="text-xl">Workflow</h3>
+				<h3 class="text-xl">Notes</h3></BaseTooltip
+			>
 		</nav>
 	</header>
 </template>
 
-<script>
-export default {
-	setup() {
-		return {};
-	},
+<script setup>
+import { ref } from 'vue';
+import QuestionMarkIcon from './icons/QuestionMarkIcon.vue';
+import PlusIcon from './icons/PlusIcon.vue';
+import BaseTooltip from './BaseTooltip.vue';
+
+let tooltipActive = ref(null);
+const toggleTooltip = () => {
+	tooltipActive.value = !tooltipActive.value;
 };
 </script>
 
