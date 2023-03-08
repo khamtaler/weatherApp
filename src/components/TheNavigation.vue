@@ -1,9 +1,7 @@
 <template>
 	<header class="sticky top-0 shadow-lg">
 		<nav class="container relative flex flex-row items-center justify-between max-w-7xl py-4">
-			<router-link to="/" class="border-solid border-2 border-green rounded-lg text-2xl py-2 px-2"
-				>WeatherApp</router-link
-			>
+			<router-link to="/" class="rounded-lg text-2xl py-2 px-2 font-bold">Weatherin</router-link>
 			<PlusIcon class="w-10 h-10 hover:opacity-60 duration-150 cursor-pointer" />
 			<div
 				class="absolute -bottom-9 right-8"
@@ -17,8 +15,7 @@
 				<h3 class="text-xl">Abilities</h3>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi a corporis ipsum quasi,
-					repudiandae sunt fuga dolores aliquam. In, magni voluptates fugiat quos totam explicabo
-					velit. Quas harum non nostrum?
+					repudiandae sunt
 				</p>
 				<h3 class="text-xl">Workflow</h3>
 				<h3 class="text-xl">Notes</h3></BaseTooltip

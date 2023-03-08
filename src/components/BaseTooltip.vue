@@ -22,7 +22,7 @@ defineProps({
 .tooltip-enter-from,
 .tooltip-leave-to {
 	opacity: 0%;
-	transform: rotate(180deg);
+	transform: rotate(270deg);
 }
 .tooltip-enter-to,
 .tooltip-leave-from {
