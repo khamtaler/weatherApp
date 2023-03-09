@@ -1,16 +1,16 @@
 <template>
 	<main class="container mt-5">
-		<div class="flex flex-col justify-center items-center center py-3 mx-4">
+		<div class="center mx-4 flex flex-col items-center justify-center py-3">
 			<input
 				type="text"
 				v-model="locationQuery"
 				placeholder="Wpisz nazwę miasta..."
-				class="bg-darkerGray max-w-xl w-full py-3 px-3 mb-2 placeholder:text-white rounded-lg focus:text-green focus:outline-green focus-visible:outline-none placeholder:focus:text-green text-center capitalize"
+				class="mb-2 w-full max-w-xl rounded-lg bg-darkerGray py-3 px-3 text-center capitalize placeholder:text-white focus:text-green focus:outline-green placeholder:focus:text-green focus-visible:outline-none"
 				@input="getResults"
 			/>
 			<ul
 				v-if="searchReasults && locationQuery"
-				class="max-h-[150px] max-w-xl w-full overflow-auto overflow-x-hidden pl-4 customScroll"
+				class="customScroll max-h-[150px] w-full max-w-xl overflow-auto overflow-x-hidden pl-4"
 			>
 				<p v-if="searchReasults.length === 0" class="text-center">Nie znaleziono podanej frazy</p>
 				<li

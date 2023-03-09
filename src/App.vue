@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col bg-darkGray text-green min-h-screen">
+	<div class="flex min-h-screen flex-col bg-darkGray text-green">
 		<TheNavigation />
 
 		<router-view></router-view>

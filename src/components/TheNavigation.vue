@@ -1,16 +1,16 @@
 <template>
 	<header class="sticky top-0 shadow-lg">
-		<nav class="container relative flex flex-row items-center justify-between max-w-7xl py-4">
-			<router-link to="/" class="flex rounded-lg gap-3 text-2xl py-2 px-2 font-bold"
-				><CloudIcon class="w-8 h-8" />Weatherin</router-link
+		<nav class="container relative flex max-w-7xl flex-row items-center justify-between py-4">
+			<router-link to="/" class="flex gap-3 rounded-lg py-2 px-2 text-2xl font-bold"
+				><CloudIcon class="h-8 w-8" />Weatherin</router-link
 			>
-			<PlusIcon class="w-10 h-10 hover:opacity-60 duration-150 cursor-pointer" />
+			<PlusIcon class="h-10 w-10 cursor-pointer duration-150 hover:opacity-60" />
 			<div
 				class="absolute -bottom-9 right-8"
 				@mouseenter="toggleTooltip"
 				@mouseleave="toggleTooltip"
 			>
-				<QuestionMarkIcon class="w-6 h-6" />
+				<QuestionMarkIcon class="h-6 w-6" />
 			</div>
 			<BaseTooltip class="instruction" :modalActive="tooltipActive">
 				<h1 class="text-2xl">The instruction</h1>
