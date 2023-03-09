@@ -20,6 +20,7 @@
 					class="cursor-pointer hover:opacity-80"
 					@click="
 						() => {
+							showWeather(result);
 							locationQuery = result.name;
 							searchReasults = null;
 						}
@@ -34,14 +35,28 @@
 <script setup>
 import { ref } from 'vue';
 import CITIES from '../constants/Cities.vue';
+import { useRouter } from 'vue-router';
 const locationQuery = ref('');
 let searchReasults = ref(null);
 
+const router = useRouter();
 const getResults = () => {
 	if (locationQuery.value !== null && locationQuery.value !== '') {
 		searchReasults.value = CITIES.filter((item) =>
 			item.name.toLowerCase().includes(locationQuery.value.toLowerCase())
 		);
 	}
+};
+
+const showWeather = (searchResult) => {
+	router.push({
+		name: 'weather',
+		params: { city: searchResult.name },
+		query: {
+			lat: searchResult.lat,
+			long: searchResult.long,
+			preview: true,
+		},
+	});
 };
 </script>
