@@ -53,8 +53,8 @@ const showWeather = (searchResult) => {
 		name: 'weather',
 		params: { city: searchResult.name },
 		query: {
-			lat: searchResult.lat,
 			long: searchResult.long,
+			lat: searchResult.lat,
 			preview: true,
 		},
 	});
