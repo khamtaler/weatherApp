@@ -1,5 +1,5 @@
 <template>
-	<header class="sticky top-0 shadow-lg">
+	<header class="sticky top-0 z-10 bg-darkerGray shadow-lg">
 		<nav class="container relative flex max-w-7xl flex-row items-center justify-between py-4">
 			<router-link to="/" class="flex gap-3 rounded-lg py-2 px-2 text-2xl font-bold"
 				><CloudIcon class="h-8 w-8" />Weatherin</router-link
