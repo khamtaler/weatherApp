@@ -73,6 +73,4 @@ const currentWeather = WEATHERCODES.filter(
 		item.from <= weatherData.current_weather.weathercode &&
 		item.to >= weatherData.current_weather.weathercode
 );
-
-console.log(weatherData);
 </script>

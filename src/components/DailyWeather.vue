@@ -1,6 +1,8 @@
 <template>
 	<div class="my-6 w-full rounded-xl bg-lightGray p-5 sm:w-[30%] xl:w-[16%]">
-		<p class="font-bold">{{ time }}</p>
+		<p class="font-bold">{{ dayNames[dayNumber] }}</p>
+		<p>{{ time }}</p>
+
 		<img
 			:src="`../src/components/icons/${weatherItem[0].svg}.svg`"
 			class="whiteSvg w-max-[80px] my-5 mx-auto h-[50px]"
@@ -27,7 +29,7 @@
 
 <script setup>
 import WEATHERCODES from '../constants/WeatherCodes.vue';
-import { toRefs } from 'vue';
+import { toRefs, ref } from 'vue';
 const props = defineProps({
 	weather: Number,
 	tempMax: Number,
@@ -36,11 +38,15 @@ const props = defineProps({
 	sunset: String,
 	sunrise: String,
 });
+let dayNumber = ref(null);
+let dayNames = ref(null);
+
 const weatherNumber = toRefs(props);
 const weatherItem = WEATHERCODES.filter(
 	(item) => item.from <= weatherNumber.weather.value && item.to >= weatherNumber.weather.value
 );
-console.log(weatherItem);
+dayNumber = new Date(weatherNumber.time.value).getDay();
+dayNames = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
 </script>
 
 <style lang="scss" scoped></style>
