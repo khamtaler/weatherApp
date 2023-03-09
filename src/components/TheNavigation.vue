@@ -5,13 +5,14 @@
 				><CloudIcon class="h-8 w-8" />Weatherin</router-link
 			>
 			<PlusIcon class="h-10 w-10 cursor-pointer duration-150 hover:opacity-60" />
-			<div
+			<button
+				type="button"
 				class="absolute -bottom-9 right-8"
 				@mouseenter="toggleTooltip"
 				@mouseleave="toggleTooltip"
 			>
 				<QuestionMarkIcon class="h-6 w-6" />
-			</div>
+			</button>
 			<BaseTooltip class="instruction" :modalActive="tooltipActive">
 				<h1 class="text-2xl">The instruction</h1>
 				<h3 class="text-xl">Abilities</h3>

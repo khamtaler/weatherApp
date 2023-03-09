@@ -4,6 +4,7 @@
 		<img
 			:src="`../src/components/icons/${weatherItem[0].svg}.svg`"
 			class="whiteSvg w-max-[80px] my-5 mx-auto h-[50px]"
+			alt="weather"
 		/>
 		<div class="flex flex-col gap-4">
 			<h5 class="font-bold">{{ weatherItem[0].weather }}</h5>
@@ -15,10 +16,10 @@
 				>&deg;C
 			</p>
 			<p class="text-white">
-				wschód: <span class="font-bold text-green">{{ sunrise.split('T')[1] }}</span> Km/h
+				wschód: <span class="font-bold text-green">{{ sunrise.split('T')[1] }}</span>
 			</p>
 			<p class="text-white">
-				zachód: <span class="font-bold text-green">{{ sunset.split('T')[1] }} </span> Km/h
+				zachód: <span class="font-bold text-green">{{ sunset.split('T')[1] }} </span>
 			</p>
 		</div>
 	</div>

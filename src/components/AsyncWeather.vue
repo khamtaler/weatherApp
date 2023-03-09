@@ -20,6 +20,7 @@
 					<img
 						:src="`../src/components/icons/${currentWeather[0].svg}.svg`"
 						class="whiteSvg h-auto w-[80px]"
+						alt="weather"
 					/>
 					<div>
 						<h5>{{ currentWeather[0].weather }}</h5>
