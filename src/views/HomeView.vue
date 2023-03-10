@@ -62,7 +62,7 @@ const getResults = () => {
 const showWeather = (searchResult) => {
 	router.push({
 		name: 'weather',
-		params: { city: searchResult.name.replaceAll(' ', '') },
+		params: { city: searchResult.name },
 		query: {
 			long: searchResult.long,
 			lat: searchResult.lat,
