@@ -2,11 +2,15 @@
 	<button v-if="savedCities.length !== 0" type="button" @click="clearLocalStorage">
 		Wyczyść wszystkie
 	</button>
-	<div v-for="city in savedCities" :key="city.id" class="relative m-auto flex items-center gap-6">
+	<div
+		v-for="city in savedCities"
+		:key="city.id"
+		class="w-max-1xl relative m-auto flex w-full items-center gap-6"
+	>
 		<SavedCityTile :city="city" @click="() => goToCity(city)" />
 		<button
 			type="button"
-			class="absolute bottom-2 left-[50%] translate-x-[-50%] rounded-md bg-darkerGray p-1 lg:left-[unset] lg:-right-[20px] lg:bottom-[unset] lg:translate-x-[0]"
+			class="absolute top-0 right-8 rounded-md bg-darkerGray p-1 md:-right-[25px]"
 		>
 			<DeleteIcon class="deleteIcon h-6 w-6" @click="deleteItem(city.id)" />
 		</button>

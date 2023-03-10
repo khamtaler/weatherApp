@@ -4,17 +4,15 @@
 			<router-link to="/" class="flex gap-3 rounded-lg py-2 px-2 text-2xl font-bold"
 				><CloudIcon class="h-8 w-8" />Weatherin</router-link
 			>
-			<button v-if="route.query.preview" type="button" @click="saveLocaly">
-				<PlusIcon class="h-10 w-10 cursor-pointer duration-150 hover:opacity-60" />
-			</button>
-
-			<div
-				class="absolute -bottom-9 right-8"
-				@mouseenter="toggleTooltip"
-				@mouseleave="toggleTooltip"
-			>
-				<QuestionMarkIcon class="h-6 w-6" />
+			<div class="flex items-center gap-3">
+				<button v-if="route.query.preview" type="button" @click="saveLocaly">
+					<PlusIcon class="h-10 w-10 cursor-pointer duration-150 hover:opacity-60" />
+				</button>
+				<div class="" @mouseenter="toggleTooltip" @mouseleave="toggleTooltip">
+					<QuestionMarkIcon class="h-8 w-8" />
+				</div>
 			</div>
+
 			<BaseTooltip class="instruction" :modalActive="tooltipActive">
 				<h1 class="text-2xl">The instruction</h1>
 				<h3 class="text-xl">Abilities</h3>
@@ -54,8 +52,8 @@ const saveLocaly = () => {
 			long: route.query.long,
 		},
 	};
-	savedObjects.value.push(cityToSave);
-	localStorage.setItem('savedCities', JSON.stringify(savedObjects.value));
+	savedObjects.value.reverse().push(cityToSave);
+	localStorage.setItem('savedCities', JSON.stringify(savedObjects.value.reverse()));
 
 	let currentquery = Object.assign({}, route.query);
 	delete currentquery.preview;

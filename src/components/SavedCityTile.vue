@@ -1,6 +1,8 @@
 <template>
-	<div class="mx-4 grid max-w-4xl grid-cols-3 items-start rounded-xl bg-darkerGray p-5">
-		<div class="justify-self-start">
+	<div
+		class="mx-4 flex w-full max-w-4xl grid-cols-3 flex-col items-center gap-6 rounded-xl bg-darkerGray p-5 md:grid md:items-start"
+	>
+		<div class="justify-self-start text-center md:text-left">
 			<h1 class="text-2xl font-bold text-white">{{ cityData.city.value.city }}</h1>
 			<p class="font-bold">
 				{{ cityData.city.value.weather.current_weather.time.split('T')[0] }}
@@ -8,7 +10,7 @@
 			</p>
 		</div>
 		<img :src="getIcon(currentWeather[0].webp)" class="max-h-[60px] justify-self-center" />
-		<div class="justify-self-end text-right">
+		<div class="justify-self-end text-center md:text-right">
 			<p class="text-3xl text-white">
 				{{ cityData.city.value.weather.current_weather.temperature }} &deg;C
 			</p>

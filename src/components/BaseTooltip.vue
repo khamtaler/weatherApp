@@ -21,16 +21,16 @@ defineProps({
 <style scoped>
 .tooltip-enter-from {
 	opacity: 0%;
-	transform: rotate(-90deg);
+	transform: rotate3d(0, 1, 0, -90deg);
 }
 .tooltip-leave-to {
 	opacity: 0%;
-	transform: rotate(90deg);
+	transform: rotate3d(0, 1, 0, 90deg);
 }
 .tooltip-enter-to,
 .tooltip-leave-from {
 	opacity: 100%;
-	transform: rotate(0deg);
+	transform: rotate3d(0, 1, 0, 0deg);
 }
 .tooltip-enter-active,
 .tooltip-leave-active {

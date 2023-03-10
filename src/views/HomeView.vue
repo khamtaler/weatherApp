@@ -30,7 +30,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="flex flex-col gap-5">
+		<div class="m-auto flex max-w-3xl flex-col gap-5">
 			<Suspense>
 				<SavedCitiesList :key="reloadList" @reload="reload" />
 				<template #fallback><p>Ładowanie...</p></template>
