@@ -4,7 +4,7 @@
 		<p>{{ time }}</p>
 
 		<img
-			:src="`../src/components/icons/${weatherItem[0].svg}.svg`"
+			:src="getIcon(weatherItem[0].webp)"
 			class="whiteSvg w-max-[80px] my-5 mx-auto h-[50px]"
 			alt="weather"
 		/>
@@ -47,6 +47,10 @@ const weatherItem = WEATHERCODES.filter(
 );
 dayNumber = new Date(weatherNumber.time.value).getDay();
 dayNames = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
+
+const getIcon = (name) => {
+	return new URL(`../assets/images/${name}.webp`, import.meta.url).href;
+};
 </script>
 
 <style lang="scss" scoped></style>

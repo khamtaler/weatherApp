@@ -902,10 +902,6 @@ video {
   opacity: 1;
 }
 
-.whiteSvg {
-  filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(154deg) brightness(104%) contrast(104%);
-}
-
 .placeholder\:text-white::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));

@@ -18,7 +18,7 @@
 				<h4 class="underline">Aktualna pogoda</h4>
 				<div class="mt-5 flex w-full items-center justify-center gap-5">
 					<img
-						:src="`../src/components/icons/${currentWeather[0].svg}.svg`"
+						:src="getIcon(currentWeather[0].webp)"
 						class="whiteSvg h-auto w-[80px]"
 						alt="weather"
 					/>
@@ -73,4 +73,8 @@ const currentWeather = WEATHERCODES.filter(
 		item.from <= weatherData.current_weather.weathercode &&
 		item.to >= weatherData.current_weather.weathercode
 );
+
+const getIcon = (name) => {
+	return new URL(`../assets/images/${name}.webp`, import.meta.url).href;
+};
 </script>
