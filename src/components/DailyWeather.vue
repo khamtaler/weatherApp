@@ -11,14 +11,14 @@
 		<div class="flex flex-col gap-4">
 			<h5 class="font-bold">{{ weatherItem[0].weather }}</h5>
 			<p class="text-white">
-				temp max: <span class="font-bold text-green">{{ Math.round(tempMax) }}</span> &deg;C
+				temp max: <span class="font-bold text-yellow">{{ Math.round(tempMax) }}</span> &deg;C
 			</p>
 			<p class="text-white">
 				temp min: <span class="font-bold text-green">{{ Math.round(tempMin) }}</span
 				>&deg;C
 			</p>
 			<p class="text-white">
-				wschód: <span class="font-bold text-green">{{ sunrise.split('T')[1] }}</span>
+				wschód: <span class="font-bold text-yellow">{{ sunrise.split('T')[1] }}</span>
 			</p>
 			<p class="text-white">
 				zachód: <span class="font-bold text-green">{{ sunset.split('T')[1] }} </span>

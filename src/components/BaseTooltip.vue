@@ -2,7 +2,7 @@
 	<Transition name="tooltip">
 		<div
 			v-if="modalActive"
-			class="absolute border-solid border rounded-md bg-darkGray border-green max-w-xs py-3 px-3"
+			class="absolute max-w-xs rounded-md border border-solid border-green bg-darkGray py-3 px-3"
 		>
 			<slot />
 		</div>
@@ -34,6 +34,6 @@ defineProps({
 }
 .tooltip-enter-active,
 .tooltip-leave-active {
-	transition: 0.4s ease-in-out;
+	transition: 0.4s cubic-bezier(0.1, 0.26, 0.7, 1);
 }
 </style>

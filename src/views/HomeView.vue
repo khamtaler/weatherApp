@@ -30,12 +30,19 @@
 				</li>
 			</ul>
 		</div>
+		<div class="flex flex-col gap-5">
+			<Suspense>
+				<SavedCitiesList />
+				<template #fallback><p>Ładowanie...</p></template>
+			</Suspense>
+		</div>
 	</main>
 </template>
 <script setup>
 import { ref } from 'vue';
 import CITIES from '../constants/Cities.vue';
 import { useRouter } from 'vue-router';
+import SavedCitiesList from '../components/SavedCitiesList.vue';
 const locationQuery = ref('');
 let searchReasults = ref(null);
 
