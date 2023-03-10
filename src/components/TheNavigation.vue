@@ -47,7 +47,7 @@ const saveLocaly = () => {
 		savedObjects.value = JSON.parse(localStorage.getItem('savedCities'));
 	}
 	const cityToSave = {
-		id: uid,
+		id: uid(),
 		city: route.params.city,
 		coords: {
 			lat: route.query.lat,
@@ -59,6 +59,7 @@ const saveLocaly = () => {
 
 	let currentquery = Object.assign({}, route.query);
 	delete currentquery.preview;
+
 	router.replace({ query: currentquery });
 };
 

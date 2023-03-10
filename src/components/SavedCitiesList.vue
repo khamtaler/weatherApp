@@ -1,11 +1,14 @@
 <template>
+	<button v-if="savedCities.length !== 0" type="button" @click="clearLocalStorage">
+		Wyczyść wszystkie
+	</button>
 	<div v-for="city in savedCities" :key="city.id" class="relative m-auto flex items-center gap-6">
 		<SavedCityTile :city="city" @click="() => goToCity(city)" />
 		<button
 			type="button"
 			class="absolute bottom-2 left-[50%] translate-x-[-50%] rounded-md bg-darkerGray p-1 lg:left-[unset] lg:-right-[20px] lg:bottom-[unset] lg:translate-x-[0]"
 		>
-			<DeleteIcon class="deleteIcon h-6 w-6" />
+			<DeleteIcon class="deleteIcon h-6 w-6" @click="deleteItem(city.id)" />
 		</button>
 	</div>
 	<p v-if="savedCities.length === 0" class="text-center">
@@ -19,6 +22,8 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import SavedCityTile from './SavedCityTile.vue';
 import DeleteIcon from './icons/DeleteIcon.vue';
+
+const emit = defineEmits(['reload']);
 
 const savedCities = ref([]);
 
@@ -51,5 +56,20 @@ const goToCity = (city) => {
 		params: { city: city.city.replaceAll(' ', '') },
 		query: { lat: city.coords.lat, long: city.coords.long },
 	});
+};
+
+const clearLocalStorage = () => {
+	if (localStorage.getItem('savedCities')) {
+		localStorage.removeItem('savedCities');
+		savedCities.length = 0;
+		emit('reload');
+	}
+};
+
+const deleteItem = (id) => {
+	const citiesList = JSON.parse(localStorage.getItem('savedCities'));
+	const updatedList = citiesList.filter((city) => city.id !== id);
+	localStorage.setItem('savedCities', JSON.stringify(updatedList));
+	emit('reload');
 };
 </script>

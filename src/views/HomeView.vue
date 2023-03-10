@@ -32,7 +32,7 @@
 		</div>
 		<div class="flex flex-col gap-5">
 			<Suspense>
-				<SavedCitiesList />
+				<SavedCitiesList :key="reloadList" @reload="reload" />
 				<template #fallback><p>Ładowanie...</p></template>
 			</Suspense>
 		</div>
@@ -46,6 +46,10 @@ import SavedCitiesList from '../components/SavedCitiesList.vue';
 const locationQuery = ref('');
 let searchReasults = ref(null);
 
+const reloadList = ref(0);
+const reload = () => {
+	reloadList.value += 1;
+};
 const router = useRouter();
 const getResults = () => {
 	if (locationQuery.value !== null && locationQuery.value !== '') {
