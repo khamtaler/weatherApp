@@ -1,13 +1,22 @@
 <template>
-	<div v-for="city in savedCities" :key="city.id">
-		<SavedCityTile :city="city" />
+	<div v-for="city in savedCities" :key="city.id" class="relative m-auto flex items-center gap-6">
+		<SavedCityTile :city="city" @click="() => goToCity(city)" />
+		<button type="button" class="absolute -right-[20px] rounded-md bg-darkerGray p-1">
+			<DeleteIcon class="deleteIcon h-6 w-6" />
+		</button>
 	</div>
+	<p v-if="savedCities.length === 0" class="text-center">
+		Brak zapisanych miast. Zapisz swoje pierwsze miasto aby wyświetlić tutaj skrót
+	</p>
 </template>
 
 <script setup>
 import axios from 'axios';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import SavedCityTile from './SavedCityTile.vue';
+import DeleteIcon from './icons/DeleteIcon.vue';
+
 const savedCities = ref([]);
 
 const getCities = async () => {
@@ -30,4 +39,14 @@ const getCities = async () => {
 	});
 };
 await getCities();
+
+const router = useRouter();
+
+const goToCity = (city) => {
+	router.push({
+		name: 'weather',
+		params: { city: city.city.replaceAll(' ', '') },
+		query: { lat: city.coords.lat, long: city.coords.long },
+	});
+};
 </script>

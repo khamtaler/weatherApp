@@ -18,8 +18,12 @@
 	border-radius: 10px;
 }
 .customScroll::-webkit-scrollbar-thumb {
-	color: #4ade80;
-	background: #4ade80;
+	color: #4ab5de;
+	background: #4ab5de;
 	border-radius: 10px;
 	opacity: 1;
+}
+
+.deleteIcon {
+	filter: invert(22%) sepia(86%) saturate(7247%) hue-rotate(357deg) brightness(101%) contrast(116%);
 }
