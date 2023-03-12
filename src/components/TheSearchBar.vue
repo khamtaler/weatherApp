@@ -51,9 +51,11 @@ const getResults = () => {
 };
 
 const showWeather = (searchResult) => {
-	const isSaved = JSON.parse(localStorage.getItem('savedCities')).filter(
-		(save) => save.name === searchResult.name
-	);
+	const savedCities = JSON.parse(localStorage.getItem('savedCities'));
+	let isSaved = null;
+	if (savedCities) {
+		isSaved = savedCities.filter((save) => save.name === searchResult.name);
+	}
 	isSaved
 		? router.push({
 				name: 'weather',
