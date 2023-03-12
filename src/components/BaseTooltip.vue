@@ -2,7 +2,7 @@
 	<Transition name="tooltip">
 		<div
 			v-if="modalActive"
-			class="absolute max-w-xs rounded-md border border-solid border-green bg-darkGray py-3 px-3"
+			class="instruction absolute top-[5rem] max-w-xs rounded-md border border-solid border-green bg-darkGray py-3 px-3 md:right-[4.5rem] md:translate-x-[0%]"
 		>
 			<slot />
 		</div>

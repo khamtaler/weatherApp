@@ -1,28 +1,37 @@
 <template>
 	<header class="sticky top-0 z-10 bg-darkerGray shadow-lg">
-		<nav class="container relative flex max-w-7xl flex-row items-center justify-between py-4">
+		<nav class="align relative flex flex-col items-center justify-between py-2 md:flex-row">
 			<router-link to="/" class="flex gap-3 rounded-lg py-2 px-2 text-2xl font-bold"
 				><CloudIcon class="h-8 w-8" />Weatherin</router-link
 			>
-			<div class="flex items-center gap-3">
+
+			<div
+				class="absolute right-3 top-3 flex items-center gap-3 md:relative md:right-[unset] md:top-[unset] md:ml-auto"
+			>
 				<button v-if="route.query.preview" type="button" @click="saveLocaly">
 					<PlusIcon class="h-10 w-10 cursor-pointer duration-150 hover:opacity-60" />
 				</button>
-				<div class="" @mouseenter="toggleTooltip" @mouseleave="toggleTooltip">
+				<div @mouseenter="toggleTooltip" @mouseleave="toggleTooltip">
 					<QuestionMarkIcon class="h-8 w-8" />
 				</div>
 			</div>
-
-			<BaseTooltip class="instruction" :modalActive="tooltipActive">
-				<h1 class="text-2xl">The instruction</h1>
-				<h3 class="text-xl">Abilities</h3>
+			<TheSearchBar />
+			<BaseTooltip :modalActive="tooltipActive">
+				<h3 class="text-xl underline underline-offset-2">Pogodynka</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi a corporis ipsum quasi,
-					repudiandae sunt
+					Aplikacja pogodowa powstała w celu sprawdzenia i wykorzystania w praktyce nowych
+					umiejętności. Aplikacja została zbudowana przy użyciu Vue.js i Tailwind.
 				</p>
-				<h3 class="text-xl">Workflow</h3>
-				<h3 class="text-xl">Notes</h3></BaseTooltip
-			>
+				<h3 class="text-xl underline underline-offset-2">Możliwości</h3>
+				<p>
+					Aplikacja służy do sprawdzania kilkudniowej pogody, po wpisaniu nazwy miasta w
+					wyszukiwarce i wybraniu go z listy następuje przekierowanie do widoku pogody, miasto można
+					dodac do obserwowanych za pomocą plusa znajdującego się po lewej stronie od wyszukiwarki.
+					Zapisane miasta wyświetlają się na głównej stronie i umośliwiają szybkie przejście do
+					pogody dla danego miasta. Lokacje zapisywane są w pamięci lokalnej przeglądarki i usuwane
+					z tamtąd za pomocą X znajdujących się przy danym mieście.
+				</p>
+			</BaseTooltip>
 		</nav>
 	</header>
 </template>
@@ -35,6 +44,7 @@ import BaseTooltip from './BaseTooltip.vue';
 import CloudIcon from './icons/CloudIcon.vue';
 import { useRoute, useRouter } from 'vue-router';
 import { uid } from 'uid';
+import TheSearchBar from './TheSearchBar.vue';
 
 const savedObjects = ref([]);
 const route = useRoute();

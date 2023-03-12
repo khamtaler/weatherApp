@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.instruction {
+/* .instruction {
 	top: 6.5rem;
 	right: 4.5rem;
-}
+} */
 
 .customScroll::-webkit-scrollbar {
 	width: 15px;
@@ -27,3 +27,14 @@
 .deleteIcon {
 	filter: invert(22%) sepia(86%) saturate(7247%) hue-rotate(357deg) brightness(101%) contrast(116%);
 }
+.initialPosition {
+	position: initial;
+}
+/* @media (max-width: 768px) {
+	.instruction {
+		top: 10rem;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+} */
