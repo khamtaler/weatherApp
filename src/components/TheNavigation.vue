@@ -11,6 +11,9 @@
 				<button v-if="route.query.preview" type="button" @click="saveLocaly">
 					<PlusIcon class="h-10 w-10 cursor-pointer duration-150 hover:opacity-60" />
 				</button>
+				<button v-if="!route.query.preview && route.query.lat" type="button" @click="goHome">
+					<GoBackIcon class="blueIcon h-7 w-7 hover:opacity-60" />
+				</button>
 				<div @mouseenter="toggleTooltip" @mouseleave="toggleTooltip">
 					<QuestionMarkIcon class="h-8 w-8" />
 				</div>
@@ -45,6 +48,7 @@ import CloudIcon from './icons/CloudIcon.vue';
 import { useRoute, useRouter } from 'vue-router';
 import { uid } from 'uid';
 import TheSearchBar from './TheSearchBar.vue';
+import GoBackIcon from './icons/GoBackIcon.vue';
 
 const savedObjects = ref([]);
 const route = useRoute();
@@ -74,5 +78,12 @@ const saveLocaly = () => {
 let tooltipActive = ref(null);
 const toggleTooltip = () => {
 	tooltipActive.value = !tooltipActive.value;
+};
+
+const goHome = () => {
+	router.push({
+		name: 'home',
+	});
+	console.log(route.query);
 };
 </script>

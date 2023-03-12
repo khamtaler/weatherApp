@@ -53,6 +53,7 @@ import axios from 'axios';
 import { useRoute } from 'vue-router';
 import WEATHERCODES from '../constants/WeatherCodes.vue';
 import DailyWeather from './DailyWeather.vue';
+import GoBackIcon from './icons/GoBackIcon.vue';
 
 const route = useRoute();
 

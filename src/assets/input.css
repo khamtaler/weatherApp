@@ -30,11 +30,6 @@
 .initialPosition {
 	position: initial;
 }
-/* @media (max-width: 768px) {
-	.instruction {
-		top: 10rem;
-		width: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-} */
+.blueIcon {
+	filter: invert(69%) sepia(60%) saturate(692%) hue-rotate(165deg) brightness(90%) contrast(93%);
+}

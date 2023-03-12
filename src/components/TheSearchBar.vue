@@ -52,17 +52,18 @@ const getResults = () => {
 
 const showWeather = (searchResult) => {
 	const savedCities = JSON.parse(localStorage.getItem('savedCities'));
-	let isSaved = null;
+	let isSaved = [];
 	if (savedCities) {
-		isSaved = savedCities.filter((save) => save.name === searchResult.name);
+		isSaved = savedCities.filter((save) => save.city === searchResult.name);
 	}
-	isSaved
+	isSaved.length === 0
 		? router.push({
 				name: 'weather',
 				params: { city: searchResult.name },
 				query: {
 					long: searchResult.long,
 					lat: searchResult.lat,
+					preview: true,
 				},
 		  })
 		: router.push({
@@ -71,7 +72,6 @@ const showWeather = (searchResult) => {
 				query: {
 					long: searchResult.long,
 					lat: searchResult.lat,
-					preview: true,
 				},
 		  });
 };

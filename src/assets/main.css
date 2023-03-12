@@ -663,6 +663,10 @@ video {
   height: auto;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .max-h-\[300px\] {
   max-height: 300px;
 }
@@ -697,6 +701,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-7 {
+  width: 1.75rem;
 }
 
 .max-w-3xl {
@@ -807,10 +815,6 @@ video {
 
 .border {
   border-width: 1px;
-}
-
-.border-2 {
-  border-width: 2px;
 }
 
 .border-\[1px\] {
@@ -1024,14 +1028,9 @@ video {
   position: initial;
 }
 
-/* @media (max-width: 768px) {
-	.instruction {
-		top: 10rem;
-		width: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-} */
+.blueIcon {
+  filter: invert(69%) sepia(60%) saturate(692%) hue-rotate(165deg) brightness(90%) contrast(93%);
+}
 
 .placeholder\:text-white::-moz-placeholder {
   --tw-text-opacity: 1;
