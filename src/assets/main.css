@@ -647,6 +647,10 @@ video {
   margin-top: 2.25rem;
 }
 
+.mt-\[50\%\] {
+  margin-top: 50%;
+}
+
 .flex {
   display: flex;
 }
@@ -1073,6 +1077,14 @@ video {
   color: rgb(74 181 222 / var(--tw-text-opacity));
 }
 
+.focus\:placeholder\:text-opacity-0:focus::-moz-placeholder {
+  --tw-text-opacity: 0;
+}
+
+.focus\:placeholder\:text-opacity-0:focus::placeholder {
+  --tw-text-opacity: 0;
+}
+
 .focus-visible\:outline-none:focus-visible {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1131,6 +1143,10 @@ video {
 
   .md\:max-h-\[150px\] {
     max-height: 150px;
+  }
+
+  .md\:max-h-\[250px\] {
+    max-height: 250px;
   }
 
   .md\:w-\[400px\] {

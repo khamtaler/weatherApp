@@ -6,13 +6,13 @@
 			type="text"
 			v-model="locationQuery"
 			placeholder="Wpisz nazwę miasta..."
-			class="w-full rounded-lg bg-lightGray py-3 text-center capitalize placeholder:text-white focus:text-green focus:outline-green placeholder:focus:text-green focus:placeholder:text-transparent focus-visible:outline-none md:w-full md:max-w-xl"
+			class="w-full rounded-lg bg-lightGray py-3 text-center capitalize placeholder:text-white focus:text-green focus:outline-green placeholder:focus:text-green focus:placeholder:text-opacity-0 focus-visible:outline-none md:w-full md:max-w-xl"
 			@input="getResults"
 			@click="() => (locationQuery = '')"
 		/>
 		<ul
 			v-if="searchReasults && locationQuery"
-			class="customScroll absolute top-[45px] right-0 max-h-[300px] w-full overflow-auto overflow-x-hidden rounded-b-lg border-t-2 border-b-2 bg-lightGray pl-4 pt-3 md:max-h-[150px] md:max-w-xl"
+			class="customScroll absolute top-[45px] right-0 max-h-[300px] w-full overflow-auto overflow-x-hidden rounded-b-lg border-t-2 border-b-2 bg-lightGray pl-4 pt-3 md:max-h-[250px] md:max-w-xl"
 		>
 			<p v-if="searchReasults.length === 0" class="text-center">Nie znaleziono podanej frazy</p>
 			<li
@@ -62,5 +62,3 @@ const showWeather = (searchResult) => {
 	});
 };
 </script>
-
-<style lang="scss" scoped></style>

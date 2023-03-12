@@ -76,5 +76,3 @@ const toggleTooltip = () => {
 	tooltipActive.value = !tooltipActive.value;
 };
 </script>
-
-<style lang="scss" scoped></style>

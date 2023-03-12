@@ -55,12 +55,13 @@ import WEATHERCODES from '../constants/WeatherCodes.vue';
 import DailyWeather from './DailyWeather.vue';
 
 const route = useRoute();
+
 const getWeather = async () => {
 	try {
 		const weather = await axios.get(
 			`https://api.open-meteo.com/v1/forecast?latitude=${route.query.lat}&longitude=${route.query.long}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum&current_weather=true&timezone=Europe%2FBerlin`
 		);
-
+		console.log('relog');
 		return weather.data;
 	} catch (err) {
 		console.log(err);

@@ -15,7 +15,7 @@
 			<DeleteIcon class="deleteIcon h-6 w-6" @click="deleteItem(city.id)" />
 		</button>
 	</div>
-	<p v-if="savedCities.length === 0" class="text-center">
+	<p v-if="savedCities.length === 0" class="mt-[50%] text-center">
 		Brak zapisanych miast. Zapisz swoje pierwsze miasto aby wyświetlić tutaj skrót
 	</p>
 </template>
