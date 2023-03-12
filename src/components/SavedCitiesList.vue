@@ -1,5 +1,10 @@
 <template>
-	<button v-if="savedCities.length !== 0" type="button" @click="clearLocalStorage">
+	<button
+		v-if="savedCities.length !== 0"
+		type="button"
+		@click="clearLocalStorage"
+		class="m-auto flex rounded-md border-[1px] border-red p-2 text-red"
+	>
 		Wyczyść wszystkie
 	</button>
 	<div

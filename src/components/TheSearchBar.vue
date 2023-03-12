@@ -51,14 +51,26 @@ const getResults = () => {
 };
 
 const showWeather = (searchResult) => {
-	router.push({
-		name: 'weather',
-		params: { city: searchResult.name },
-		query: {
-			long: searchResult.long,
-			lat: searchResult.lat,
-			preview: true,
-		},
-	});
+	const isSaved = JSON.parse(localStorage.getItem('savedCities')).filter(
+		(save) => save.name === searchResult.name
+	);
+	isSaved
+		? router.push({
+				name: 'weather',
+				params: { city: searchResult.name },
+				query: {
+					long: searchResult.long,
+					lat: searchResult.lat,
+				},
+		  })
+		: router.push({
+				name: 'weather',
+				params: { city: searchResult.name },
+				query: {
+					long: searchResult.long,
+					lat: searchResult.lat,
+					preview: true,
+				},
+		  });
 };
 </script>
