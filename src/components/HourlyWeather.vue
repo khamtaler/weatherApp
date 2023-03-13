@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="my-6 flex w-[32%] flex-col flex-wrap rounded-xl bg-lightGray p-3 text-[0.8rem] sm:w-[15%] sm:text-sm xl:w-[8%]"
+		class="my-6 flex w-[32%] flex-col flex-wrap rounded-xl bg-lightGray p-3 text-[0.8rem] sm:w-[15%] sm:text-sm xl:w-[12%]"
 	>
 		<p>{{ time.split('T')[1] }}</p>
 

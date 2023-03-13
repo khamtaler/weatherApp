@@ -699,6 +699,10 @@ video {
   width: 2rem;
 }
 
+.w-\[32\%\] {
+  width: 32%;
+}
+
 .w-\[80px\] {
   width: 80px;
 }
@@ -709,14 +713,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[24\%\] {
-  width: 24%;
-}
-
-.w-\[32\%\] {
-  width: 32%;
 }
 
 .max-w-3xl {
@@ -886,12 +882,12 @@ video {
   padding: 0.5rem;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-10 {
@@ -956,18 +952,13 @@ video {
   line-height: 2.25rem;
 }
 
+.text-\[0\.8rem\] {
+  font-size: 0.8rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.text-\[0\.8rem\] {
-  font-size: 0.8rem;
 }
 
 .font-bold {
@@ -1124,12 +1115,12 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:w-\[30\%\] {
-    width: 30%;
-  }
-
   .sm\:w-\[15\%\] {
     width: 15%;
+  }
+
+  .sm\:w-\[30\%\] {
+    width: 30%;
   }
 
   .sm\:flex-row {
@@ -1222,19 +1213,15 @@ video {
     width: 16%;
   }
 
-  .xl\:w-\[6\%\] {
-    width: 6%;
+  .xl\:w-\[8\%\] {
+    width: 8%;
   }
 
   .xl\:w-full {
     width: 100%;
   }
 
-  .xl\:w-\[7\%\] {
-    width: 7%;
-  }
-
-  .xl\:w-\[8\%\] {
-    width: 8%;
+  .xl\:w-\[12\%\] {
+    width: 12%;
   }
 }
