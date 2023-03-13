@@ -15,7 +15,8 @@
 				{{ weatherData.current_weather.time.split('T')[1] }}
 			</h3>
 			<div class="mx-auto mt-5 flex w-full max-w-xl flex-col items-center">
-				<h4 class="underline">Aktualna pogoda</h4>
+				<h4>Aktualna pogoda</h4>
+				<hr class="w-full bg-green" />
 				<div class="mt-5 flex w-full items-center justify-center gap-5">
 					<img
 						:src="getIcon(currentWeather[0].webp)"
