@@ -6,7 +6,7 @@
 			type="text"
 			v-model="locationQuery"
 			placeholder="Wpisz nazwę miasta..."
-			class="w-full rounded-lg bg-lightGray py-3 text-center capitalize placeholder:text-white focus:text-green focus:outline-green placeholder:focus:text-green focus:placeholder:text-opacity-0 focus-visible:outline-none md:w-full md:max-w-xl"
+			class="w-full rounded-lg bg-lightGray py-3 text-center capitalize placeholder:normal-case placeholder:text-white focus:text-green focus:outline-green placeholder:focus:text-green focus:placeholder:text-opacity-0 focus-visible:outline-none md:w-full md:max-w-xl"
 			@input="getResults"
 			@click="() => (locationQuery = '')"
 		/>

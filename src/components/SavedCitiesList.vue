@@ -21,7 +21,7 @@
 		</button>
 	</div>
 	<p v-if="savedCities.length === 0" class="mt-[50%] text-center">
-		Brak zapisanych miast. Zapisz swoje pierwsze miasto aby wyświetlić tutaj skrót
+		Brak zapisanych miast. Zapisz swoje pierwsze miasto aby wyświetlić je tutaj.
 	</p>
 </template>
 

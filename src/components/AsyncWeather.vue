@@ -31,6 +31,20 @@
 			</div>
 		</div>
 		<div class="mt-5 w-full text-center">
+			<h3 class="my-5 text-xl font-bold">Prognoza godzinowa</h3>
+			<hr />
+			<div class="mt-7 flex flex-row flex-wrap justify-around xl:w-full">
+				<HourlyWeather
+					v-for="i in 24"
+					:weather="weatherData.hourly.weathercode[i]"
+					:temp="weatherData.hourly.temperature_120m[i]"
+					:time="weatherData.hourly.time[i]"
+					:wind="weatherData.hourly.windspeed_120m[i]"
+					:precipation="weatherData.hourly.precipitation_probability[i]"
+				/>
+			</div>
+		</div>
+		<div class="mt-5 w-full text-center">
 			<h3 class="my-5 text-xl font-bold">Prognoza na kolejne dni</h3>
 			<hr />
 			<div class="mt-7 flex flex-col justify-around sm:flex-row sm:flex-wrap xl:w-full">
@@ -53,23 +67,23 @@ import axios from 'axios';
 import { useRoute } from 'vue-router';
 import WEATHERCODES from '../constants/WeatherCodes.vue';
 import DailyWeather from './DailyWeather.vue';
-import GoBackIcon from './icons/GoBackIcon.vue';
+import HourlyWeather from './HourlyWeather.vue';
 
 const route = useRoute();
 
 const getWeather = async () => {
 	try {
 		const weather = await axios.get(
-			`https://api.open-meteo.com/v1/forecast?latitude=${route.query.lat}&longitude=${route.query.long}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum&current_weather=true&timezone=Europe%2FBerlin`
+			`https://api.open-meteo.com/v1/forecast?latitude=${route.query.lat}&longitude=${route.query.long}&hourly=precipitation_probability,weathercode,windspeed_120m,temperature_120m&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum&current_weather=true&timezone=Europe%2FBerlin`
 		);
-		console.log('relog');
+
 		return weather.data;
 	} catch (err) {
 		console.log(err);
 	}
 };
 const weatherData = await getWeather();
-
+console.log(weatherData);
 const currentWeather = WEATHERCODES.filter(
 	(item) =>
 		item.from <= weatherData.current_weather.weathercode &&
