@@ -623,6 +623,16 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -715,6 +725,14 @@ video {
   width: 100%;
 }
 
+.w-\[12\%\] {
+  width: 12%;
+}
+
+.w-\[16\%\] {
+  width: 16%;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -790,6 +808,14 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .justify-self-start {
@@ -869,14 +895,14 @@ video {
   background-color: rgb(31 31 31 / var(--tw-bg-opacity));
 }
 
-.bg-lightGray {
-  --tw-bg-opacity: 1;
-  background-color: rgb(48 48 48 / var(--tw-bg-opacity));
-}
-
 .bg-green {
   --tw-bg-opacity: 1;
   background-color: rgb(74 181 222 / var(--tw-bg-opacity));
+}
+
+.bg-lightGray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(48 48 48 / var(--tw-bg-opacity));
 }
 
 .p-1 {
@@ -1120,6 +1146,21 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sm\:my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .sm\:my-3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
   .sm\:w-\[15\%\] {
     width: 15%;
   }
@@ -1128,12 +1169,24 @@ video {
     width: 30%;
   }
 
+  .sm\:w-\[11\%\] {
+    width: 11%;
+  }
+
+  .sm\:w-\[12\%\] {
+    width: 12%;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
 
   .sm\:flex-wrap {
     flex-wrap: wrap;
+  }
+
+  .sm\:p-3 {
+    padding: 0.75rem;
   }
 
   .sm\:text-sm {
@@ -1187,6 +1240,14 @@ video {
     width: 100%;
   }
 
+  .md\:w-\[12\%\] {
+    width: 12%;
+  }
+
+  .md\:w-\[8\%\] {
+    width: 8%;
+  }
+
   .md\:max-w-xl {
     max-width: 36rem;
   }
@@ -1214,19 +1275,39 @@ video {
 }
 
 @media (min-width: 1280px) {
-  .xl\:w-\[16\%\] {
-    width: 16%;
+  .xl\:h-\[30px\] {
+    height: 30px;
   }
 
-  .xl\:w-\[8\%\] {
-    width: 8%;
+  .xl\:w-\[12\%\] {
+    width: 12%;
+  }
+
+  .xl\:w-\[16\%\] {
+    width: 16%;
   }
 
   .xl\:w-full {
     width: 100%;
   }
 
-  .xl\:w-\[12\%\] {
-    width: 12%;
+  .xl\:w-\[7\%\] {
+    width: 7%;
+  }
+
+  .xl\:w-\[5\%\] {
+    width: 5%;
+  }
+
+  .xl\:w-\[4\.5\%\] {
+    width: 4.5%;
+  }
+
+  .xl\:w-\[4\%\] {
+    width: 4%;
+  }
+
+  .xl\:p-2 {
+    padding: 0.5rem;
   }
 }

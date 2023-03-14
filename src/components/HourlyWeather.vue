@@ -1,25 +1,25 @@
 <template>
 	<div
-		class="my-6 flex w-[32%] flex-col flex-wrap rounded-xl bg-lightGray p-3 text-[0.8rem] sm:w-[15%] sm:text-sm xl:w-[12%]"
+		class="my-3 flex w-[16%] flex-col flex-wrap rounded-xl bg-lightGray p-2 text-[0.8rem] sm:my-6 sm:w-[12%] sm:p-3 sm:text-sm md:w-[8%] xl:w-[4%] xl:p-2"
 	>
 		<p>{{ time.split('T')[1] }}</p>
 
 		<img
 			:src="getIcon(weatherItem[0].webp)"
-			class="whiteSvg w-max-[80px] my-5 mx-auto h-[50px]"
+			class="whiteSvg w-max-[80px] my-2 mx-auto sm:my-3 xl:h-[30px]"
 			alt="weather"
 		/>
-		<div class="mt-auto flex flex-col gap-4">
-			<h5 class="font-bold">{{ weatherItem[0].weather }}</h5>
+		<div class="mt-auto flex flex-col gap-1">
+			<!-- <h5 class="font-bold">{{ weatherItem[0].weather }}</h5> -->
 			<p class="text-white">
-				<span class="font-bold text-yellow">{{ Math.round(temp) }}</span> &deg;C
+				<span class="font-bold text-yellow">{{ Math.round(temp) }}&deg;</span>
 			</p>
 
-			<p class="text-white">
+			<!-- <p class="text-white">
 				Wiatr: <span class="font-bold text-yellow">{{ wind }} km/h</span>
-			</p>
+			</p> -->
 			<p class="text-white">
-				opady: <span class="font-bold text-green">{{ precipation }}% </span>
+				<span class="font-bold text-green">{{ precipation }}% </span>
 			</p>
 		</div>
 	</div>
