@@ -84,7 +84,7 @@ const getWeather = async () => {
 	}
 };
 const weatherData = await getWeather();
-console.log(weatherData);
+
 const currentWeather = WEATHERCODES.filter(
 	(item) =>
 		item.from <= weatherData.current_weather.weathercode &&

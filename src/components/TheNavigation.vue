@@ -84,6 +84,5 @@ const goHome = () => {
 	router.push({
 		name: 'home',
 	});
-	console.log(route.query);
 };
 </script>

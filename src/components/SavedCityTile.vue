@@ -46,5 +46,4 @@ const currentWeather = WEATHERCODES.filter(
 const getIcon = (name) => {
 	return new URL(`../assets/images/${name}.webp`, import.meta.url).href;
 };
-console.log();
 </script>
